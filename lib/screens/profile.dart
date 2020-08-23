@@ -18,6 +18,14 @@ class ProfilePage extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 10.0,
+            spreadRadius: -8,
+            offset: Offset(1.0, 2.0),
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,11 +110,10 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       padding: EdgeInsets.only(top: 35, left: 10, right: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
         color: const Color(0xFF0d80eb),
       ),
       child: Column(
-        //mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,11 +134,14 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
                       fontSize: 20,
                     ),
                   ),
-                  Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 30,
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15, right: 5),
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -140,7 +150,7 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
             children: <Widget>[
               Positioned(
                 child: Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: EdgeInsets.only(top: 10, bottom: 6),
                   width: 110,
                   height: 110,
                   child: CircleAvatar(
@@ -163,5 +173,5 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(215);
+  Size get preferredSize => Size.fromHeight(245);
 }
