@@ -111,8 +111,6 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(300.0);
 }
 
-
-
 class BusesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -120,13 +118,13 @@ class BusesTab extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
-          _busData('ico_ruta113.jpg', "Ruta 11B", "San Salvador - Santo Tomás"),
-          _busData('ico_ruta101.jpg', "Ruta 19", "San Salvador - Soyapango"),
-          _busData('ico_ruta138.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
+          _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
+          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
           _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
-          _busData('ico_ruta113.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
-          _busData('ico_ruta101.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
-          _busData('ico_ruta138.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
+          _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
+          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
         ],
       ),
     );

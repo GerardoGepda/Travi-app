@@ -134,9 +134,9 @@ class ChatBody extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black,
-                  blurRadius: 15.0,
-                  spreadRadius: -5,
-                  offset: Offset(1.0, 4.0),
+                  blurRadius: 10.0,
+                  spreadRadius: -7,
+                  offset: Offset(1.0, 2.0),
                 ),
               ],
             ),
@@ -188,9 +188,9 @@ class ChatBody extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black,
-                  blurRadius: 15.0,
-                  spreadRadius: -5,
-                  offset: Offset(1.0, 4.0),
+                  blurRadius: 10.0,
+                  spreadRadius: -7,
+                  offset: Offset(1.0, 2.0),
                 ),
               ],
             ),
@@ -237,9 +237,9 @@ class CreateMessage extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black,
-            blurRadius: 15.0,
-            spreadRadius: -5,
-            offset: Offset(1.0, 5.0),
+            blurRadius: 10.0,
+            spreadRadius: -7,
+            offset: Offset(1.0, 2.0),
           ),
         ],
       ),
