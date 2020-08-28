@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travi_screens/screens/cuerpo.dart';
+import 'package:travi_screens/screens/paer_Reg.dart';
+import 'package:travi_screens/screens/paer_login.dart';
+import 'package:travi_screens/screens/tuto.dart';
 import 'screens/profile.dart';
 import 'screens/chat.dart';
 //import 'screens/login.dart';
@@ -14,14 +18,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/start',
       routes: {
         '/': (context) => HomePage(),
         '/profile': (context) => ProfilePage(),
         '/chat': (context) => ChatPage(),
+        '/start': (context) => Cuerpo(),
+        '/login': (context) => PearReg(),
+        '/registro': (context) => PearLogin(),
+        '/tuto': (context) => Tuto(),
         '/routesBuses': (context) => RoutesAndBuses()
       },
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
     );
   }
 }
