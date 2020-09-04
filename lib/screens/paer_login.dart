@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travi_screens/ui/ui_helper.dart';
+import 'package:travi_screens/scripts/ui/ui_helper.dart';
 
 bool _value = false;
 

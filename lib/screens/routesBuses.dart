@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../scripts/bottomnavbar.dart';
 
 class RoutesAndBuses extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -24,71 +23,69 @@ class RoutesAndBuses extends StatelessWidget {
 }
 
 class MyHeader extends StatelessWidget implements PreferredSizeWidget {
-
   //var with the searchbar section
   static final Widget searchBar = Container(
-    margin: const EdgeInsets.all(15),
-    child: Row(
-      children: <Widget>[
-        Icon(
-          Icons.location_on,
-          color: Colors.white,
-        ),
-        Expanded(
-          child: Container(
-            margin: EdgeInsets.only(left: 5),
-            height: 30,
-            child: TextField(
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+      margin: const EdgeInsets.all(15),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            Icons.location_on,
+            color: Colors.white,
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(left: 5),
+              height: 30,
+              child: TextField(
+                textAlignVertical: TextAlignVertical.center,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  contentPadding: EdgeInsets.only(left: 10),
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: "Busca una parada",
                 ),
-                contentPadding: EdgeInsets.only(left: 10),
-                filled: true,
-                fillColor: Colors.white,
-                hintText: "Busca una parada",
               ),
             ),
           ),
-        ),
-        Container(
-          margin: EdgeInsets.only(left: 20),
-          child: Icon(
-            Icons.more_vert,
-            color: Colors.white,
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
           ),
-        ),
-      ],
-    )
-  );
+        ],
+      ));
 
   //var with the tabBar section
   static final Widget barBusesAndComments = Container(
-      margin: EdgeInsets.only(bottom: 10.0, left: 15.0, right: 15.0),
-      child: TabBar(
-        indicatorColor: Colors.white,
-        indicator: UnderlineTabIndicator(
-          //borderSide: BorderSide(width: 2.0),
-          insets: EdgeInsets.symmetric(horizontal: 20.0),
-        ),
-        labelStyle: TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.bold,
-        ),
-        tabs: <Widget>[
-          Tab(text: "Rutas"),
-          Tab(text: "Comentarios"),
-        ],
+    margin: EdgeInsets.only(bottom: 10.0, left: 15.0, right: 15.0),
+    child: TabBar(
+      indicatorColor: Colors.white,
+      indicator: UnderlineTabIndicator(
+        //borderSide: BorderSide(width: 2.0),
+        insets: EdgeInsets.symmetric(horizontal: 20.0),
       ),
-    );
-
+      labelStyle: TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.bold,
+      ),
+      tabs: <Widget>[
+        Tab(text: "Rutas"),
+        Tab(text: "Comentarios"),
+      ],
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
         color: const Color(0xFF0d80eb),
       ),
       child: Column(
@@ -117,24 +114,28 @@ class BusesTab extends StatelessWidget {
     return Container(
       child: ListView(
         children: <Widget>[
-          _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData(
+              'ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
           _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
           _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
-          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
-          _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData(
+              'ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
+          _busData(
+              'ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
           _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
           _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
-          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
+          _busData(
+              'ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
         ],
       ),
     );
   }
 
-  ListTile _busData (String img, String routeName, String routesSites){
+  ListTile _busData(String img, String routeName, String routesSites) {
     return ListTile(
       leading: Image.asset(
         'assets/images/$img',
-        ),
+      ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -176,7 +177,6 @@ class BusesTab extends StatelessWidget {
   }
 }
 
-
 class CommentsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -202,7 +202,6 @@ class CommentsTab extends StatelessWidget {
       ),
     );
   }
-
 
   final Widget makeComment = Container(
     margin: EdgeInsets.only(top: 10.0),
@@ -249,8 +248,7 @@ class CommentsTab extends StatelessWidget {
     ),
   );
 
-
-  Container _comments(String imgUser, String user, String commentDate){
+  Container _comments(String imgUser, String user, String commentDate) {
     return Container(
       margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 10, bottom: 10),
       //padding: EdgeInsets.all(7.0),
@@ -354,5 +352,4 @@ class CommentsTab extends StatelessWidget {
       ),
     );
   }
-
 }

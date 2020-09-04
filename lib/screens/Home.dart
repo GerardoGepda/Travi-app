@@ -5,7 +5,6 @@ import 'package:location/location.dart';
 import '../scripts/bottomnavbar.dart';
 
 class HomePage extends StatefulWidget {
-  
   HomePage({Key key}) : super(key: key);
 
   @override
@@ -13,10 +12,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void  _openDrawer() {
+  void _openDrawer() {
     _scaffoldKey.currentState.openDrawer();
   }
 
@@ -27,73 +25,68 @@ class _HomePageState extends State<HomePage> {
   GoogleMapController _mapController;
   bool isMapCreated = false;
 
-  void _onMapCreated(GoogleMapController controller){
+  void _onMapCreated(GoogleMapController controller) {
     _mapController = controller;
     isMapCreated = true;
     changeMapMode();
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
-  Future<String> getJsonFile(String path)async{
+  Future<String> getJsonFile(String path) async {
     return await rootBundle.loadString(path);
   }
 
-  void setMapStyle(String mapStyle){
+  void setMapStyle(String mapStyle) {
     _mapController.setMapStyle(mapStyle);
   }
 
-  void changeMapMode(){
+  void changeMapMode() {
     getJsonFile('assets/mapstyle.json').then(setMapStyle);
   }
-
 
   //var for the current location
   Location _tracker = Location();
 
-  void currentLocation(){
+  void currentLocation() {
     _tracker.getLocation().then((value) => {
-        _mapController.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        //bearing: 100,
-        target: LatLng(value.latitude, value.longitude),
-        tilt: 0,
-        zoom: 18,
-      ))),
-      });
+          _mapController
+              .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+            //bearing: 100,
+            target: LatLng(value.latitude, value.longitude),
+            tilt: 0,
+            zoom: 18,
+          ))),
+        });
   }
 
   @override
   Widget build(BuildContext context) {
-
-    if(isMapCreated){
+    if (isMapCreated) {
       changeMapMode();
     }
 
     return Scaffold(
       key: _scaffoldKey,
-      bottomNavigationBar: BottomNavBar(indexBar: 0,),
+      bottomNavigationBar: BottomNavBar(
+        indexBar: 0,
+      ),
 
-    //Drawer code
+      //Drawer code
       drawer: Drawer(
         child: Container(
           decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFF1289f7), Color(0xFF38b6de)],
-          begin: const FractionalOffset(1.0, 0.60),
-          end: const FractionalOffset(1.0, 1.0)
+            color: Color(0xFF0d80eb),
           ),
-        ),
           child: ListView(
             children: <Widget>[
               Align(
                 alignment: Alignment.topLeft,
                 child: Padding(
                   padding: EdgeInsets.only(top: 15, left: 10),
-                  child:  IconButton(
+                  child: IconButton(
                     alignment: Alignment.topLeft,
-                    icon: Icon(Icons.arrow_back_ios, color: Colors.white), 
-                    onPressed: (){
+                    icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                    onPressed: () {
                       _closeDrawer();
                     },
                   ),
@@ -107,7 +100,8 @@ class _HomePageState extends State<HomePage> {
                     height: 100.0,
                     margin: EdgeInsets.only(bottom: 7.0),
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/users/user1.jpg'),
+                      backgroundImage:
+                          AssetImage('assets/images/users/user1.jpg'),
                     ),
                   ),
                   Text(
@@ -121,7 +115,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               ListTile(
-                contentPadding: EdgeInsets.only(top: 15.0, left: 30.0, right: 30.0),
+                contentPadding:
+                    EdgeInsets.only(top: 15.0, left: 30.0, right: 30.0),
                 leading: Icon(
                   Icons.person,
                   color: Colors.white,
@@ -133,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 16,
                   ),
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, '/profile');
                 },
               ),
@@ -178,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 16,
                   ),
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, '/chat');
                 },
               ),
@@ -195,6 +190,9 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 16,
                   ),
                 ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/viajes');
+                },
               ),
               Container(
                 margin: EdgeInsets.only(top: 50.0),
@@ -227,7 +225,7 @@ class _HomePageState extends State<HomePage> {
             myLocationButtonEnabled: false,
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target:LatLng(13.701339, -89.224429),
+              target: LatLng(13.701339, -89.224429),
               zoom: 12,
             ),
           ),
@@ -243,99 +241,23 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         children: <Widget>[
                           IconButton(
-                          icon: Icon(Icons.menu, color: Colors.black), 
-                          onPressed: (){
-                            _openDrawer();
-                          },
+                            icon: Icon(Icons.menu, color: Colors.black),
+                            onPressed: () {
+                              _openDrawer();
+                            },
                           ),
                           Expanded(
-                            child: Text(
-                              "San Salvador, El Salvador",
-                              style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          IconButton(
-                          icon: Icon(Icons.close, color: Colors.black), 
-                          onPressed: (){}
-                          ),
-                          IconButton(
-                          icon: Icon(Icons.mic, color: Colors.black), 
-                          onPressed: null
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: 10),
-                            child: Icon(
-                              Icons.location_on,
-                              color: const Color(0xFF0d80eb),
-                            ),
-                          ),
-                          Container(
-                            width: 300.0,
-                            height: 35.0,
                             child: TextField(
                               decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.grey[200],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                hintText: "Tu ubicación",
-                                contentPadding: EdgeInsets.only(left: 10),
+                                hintText: 'Punto de partida',
+                                border: InputBorder.none,
                               ),
                             ),
                           ),
                           IconButton(
-                            icon: Icon(Icons.more_vert, color: Colors.black), 
-                            onPressed: null
-                          ),
+                              icon: Icon(Icons.mic, color: Colors.black),
+                              onPressed: null),
                         ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: 10),
-                            child: Icon(
-                              Icons.directions_bus,
-                              color: const Color(0xFF0d80eb),
-                            ),
-                          ),
-                          Container(
-                            width: 300.0,
-                            height: 35.0,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                filled: true,
-                                fillColor: Colors.grey[100],
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                hintText: "Parada",
-                                contentPadding: EdgeInsets.only(left: 10),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 10),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Text("Mostrar Rutas"),
-                            IconButton(
-                              color: Colors.blue,
-                              icon: Icon(Icons.drag_handle),
-                              onPressed: null, 
-                            ),
-                          ],
-                        ),
                       ),
                     ],
                   ),
@@ -347,7 +269,7 @@ class _HomePageState extends State<HomePage> {
             margin: EdgeInsets.only(bottom: 120.0, right: 5.0),
             alignment: Alignment.bottomRight,
             child: FloatingActionButton(
-              onPressed: (){
+              onPressed: () {
                 currentLocation();
               },
               child: Icon(
@@ -359,7 +281,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       //End of Body code
-
     );
   }
 }

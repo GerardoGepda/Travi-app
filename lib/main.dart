@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travi_screens/screens/Viajes/viajes.dart';
 import 'package:travi_screens/screens/cuerpo.dart';
 import 'package:travi_screens/screens/paer_Reg.dart';
 import 'package:travi_screens/screens/paer_login.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/start',
       routes: {
         '/': (context) => HomePage(),
+        '/viajes': (context) => Viajes(),
         '/profile': (context) => ProfilePage(),
         '/chat': (context) => ChatPage(),
         '/start': (context) => Cuerpo(),
