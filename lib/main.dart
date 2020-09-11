@@ -21,11 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
       initialRoute: '/',
-=======
-      initialRoute: '/splash',
->>>>>>> 8ce54b219c48d74bd7278e152686943985e6af0a
       routes: {
         '/': (context) => HomePage(),
         '/viajes': (context) => Viajes(),
