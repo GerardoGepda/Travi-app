@@ -56,8 +56,8 @@ class ViajesBar extends StatelessWidget implements PreferredSizeWidget {
                 "TRAVI",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 23.0,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Righteous",
+                  fontSize: 25.0,
                 ),
               ),
               Icon(

@@ -15,7 +15,8 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 35.0, left: 17.0, right: 17.0, bottom: 20.0),
+      padding:
+          EdgeInsets.only(top: 35.0, left: 17.0, right: 17.0, bottom: 20.0),
       color: const Color(0xFF0d80eb),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,19 +24,26 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-                IconButton(
-                  padding: EdgeInsets.all(0),
-                  icon: Icon(Icons.close, color: Colors.white, size: 30,),
-                  onPressed: (){
-                    Navigator.pop(context);
-                  },
+              IconButton(
+                padding: EdgeInsets.all(0),
+                icon: Icon(
+                  Icons.close,
+                  color: Colors.white,
+                  size: 30,
                 ),
-                IconButton(
-                  padding: EdgeInsets.all(0),
-                  icon: Icon(Icons.phone, color: Colors.white, size: 30,),
-                  onPressed: (){
-                  },
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              IconButton(
+                padding: EdgeInsets.all(0),
+                icon: Icon(
+                  Icons.phone,
+                  color: Colors.white,
+                  size: 30,
                 ),
+                onPressed: () {},
+              ),
             ],
           ),
           Row(
@@ -45,8 +53,8 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
                 "TRAVI",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 23.0,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Righteous",
+                  fontSize: 25.0,
                 ),
               ),
               Icon(
@@ -57,7 +65,7 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
             ],
           ),
         ],
-      ), 
+      ),
     );
   }
 
@@ -66,10 +74,12 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class ChatBody extends StatelessWidget {
-
-  final String texto = "Buena día. A través de este medio podra comunicarse con nuestro equipo en caso de un incidente o problema dentro de la unidad o sobre nuestra plataforma.";
-  final String texto2 = "Buena día. Quisiera reportar una conducción temeraria por parte del motorista de la ruta 41-F, rumbo a Soyapango en la cual me encuentro en estos momentos.";
-  final String texto3 = "Agradecemos la información, se realizará un reporte sobre la unidad y sobre su conductor, y se enviara a la empresa correspondiente.";
+  final String texto =
+      "Buena día. A través de este medio podra comunicarse con nuestro equipo en caso de un incidente o problema dentro de la unidad o sobre nuestra plataforma.";
+  final String texto2 =
+      "Buena día. Quisiera reportar una conducción temeraria por parte del motorista de la ruta 41-F, rumbo a Soyapango en la cual me encuentro en estos momentos.";
+  final String texto3 =
+      "Agradecemos la información, se realizará un reporte sobre la unidad y sobre su conductor, y se enviara a la empresa correspondiente.";
   final String texto4 = "Muchas gracias por su atención y por su trabajo.";
 
   @override
@@ -106,8 +116,7 @@ class ChatBody extends StatelessWidget {
     );
   }
 
-
-  Container _myMesagge(String message, String messageHour){
+  Container _myMesagge(String message, String messageHour) {
     return Container(
       margin: EdgeInsets.only(bottom: 35.0),
       alignment: Alignment.centerLeft,
@@ -117,7 +126,7 @@ class ChatBody extends StatelessWidget {
           Container(
             width: 50.0,
             height: 50.0,
-            margin: EdgeInsets.only(left:20.0, right: 10.0),
+            margin: EdgeInsets.only(left: 20.0, right: 10.0),
             child: CircleAvatar(
               backgroundImage: AssetImage('assets/images/users/user1.jpg'),
             ),
@@ -168,8 +177,7 @@ class ChatBody extends StatelessWidget {
     );
   }
 
-
-  Container _receivedMessage(String message, String messageHour){
+  Container _receivedMessage(String message, String messageHour) {
     return Container(
       margin: EdgeInsets.only(bottom: 35.0),
       alignment: Alignment.centerRight,

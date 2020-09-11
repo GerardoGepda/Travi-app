@@ -16,7 +16,7 @@ class _CuerpoState extends State<Cuerpo> {
         children: <Widget>[
           Container(
             height: 90.0,
-            padding: EdgeInsets.fromLTRB(80.0, 20.0, 85.0, 0.0),
+            padding: EdgeInsets.fromLTRB(85.0, 49.0, 85.0, 0.0),
             child: message(),
           ),
           Container(
@@ -117,10 +117,10 @@ Widget travi() {
 Widget message() {
   return Container(
     child: Text(
-      "",
+      "TRAVI",
       textAlign: TextAlign.center,
       style: TextStyle(
-          fontFamily: "Righteous", fontSize: 20.0, color: Colors.black),
+          fontFamily: "Righteous", fontSize: 40.0, color: Color(0xFF0d80eb)),
     ),
   );
 }
@@ -140,7 +140,7 @@ Widget comenzar() {
               style: TextStyle(
                   fontSize: 17.0,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF119EED)),
+                  color: Color(0xFF0d80eb)),
             ),
             onPressed: () {},
             shape: RoundedRectangleBorder(
