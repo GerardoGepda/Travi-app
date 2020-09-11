@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travi_screens/screens/Viajes/viajes.dart';
+import 'package:travi_screens/screens/config_page.dart';
 import 'package:travi_screens/screens/cuerpo.dart';
 import 'package:travi_screens/screens/paer_Reg.dart';
 import 'package:travi_screens/screens/paer_login.dart';
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/start',
+      initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/viajes': (context) => Viajes(),
         '/profile': (context) => ProfilePage(),
+        '/config': (context) => ConfigPage(),
         '/chat': (context) => ChatPage(),
         '/start': (context) => Cuerpo(),
         '/login': (context) => PearReg(),

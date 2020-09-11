@@ -49,14 +49,14 @@ class _HomePageState extends State<HomePage> {
 
   void currentLocation() {
     _tracker.getLocation().then((value) => {
-          _mapController
-              .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-            //bearing: 100,
-            target: LatLng(value.latitude, value.longitude),
-            tilt: 0,
-            zoom: 18,
-          ))),
-        });
+      _mapController
+        .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+        //bearing: 100,
+        target: LatLng(value.latitude, value.longitude),
+        tilt: 0,
+        zoom: 18,
+      ))),
+    });
   }
 
   @override
@@ -159,6 +159,9 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 16,
                   ),
                 ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/config');
+                },
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: 30.0, right: 30.0),
