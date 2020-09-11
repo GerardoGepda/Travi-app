@@ -3,6 +3,7 @@ import 'package:travi_screens/screens/Viajes/viajes.dart';
 import 'package:travi_screens/screens/cuerpo.dart';
 import 'package:travi_screens/screens/paer_Reg.dart';
 import 'package:travi_screens/screens/paer_login.dart';
+import 'package:travi_screens/screens/splash.dart';
 import 'package:travi_screens/screens/tuto.dart';
 import 'screens/profile.dart';
 import 'screens/chat.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/start',
+      initialRoute: '/splash',
       routes: {
         '/': (context) => HomePage(),
         '/viajes': (context) => Viajes(),
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => PearReg(),
         '/registro': (context) => PearLogin(),
         '/tuto': (context) => Tuto(),
-        '/routesBuses': (context) => RoutesAndBuses()
+        '/routesBuses': (context) => RoutesAndBuses(),
+        '/splash': (context) => SplashScreen(),
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
