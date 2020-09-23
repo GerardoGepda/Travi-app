@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'config_pages/config_notification.dart';
+import 'config_pages/config_location.dart';
 
 class ConfigPage extends StatelessWidget {
   @override
@@ -23,10 +24,14 @@ class ConfigBody extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: Icon(Icons.location_on),
-            title: Text(
-              'Editar mis ubicaciones'),
+            title: Text('Editar mis ubicaciones'),
             subtitle: Text('Perosonaliza tu ubicaciones'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                CupertinoPageRoute(builder: (context) => ConfigLocation()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.person),
@@ -38,7 +43,6 @@ class ConfigBody extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                //PersonlaPageRoute(Confignotification()),
                 CupertinoPageRoute(builder: (context) => Confignotification()),
               );
             },
