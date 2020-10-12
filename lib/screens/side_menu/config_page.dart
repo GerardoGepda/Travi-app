@@ -10,6 +10,7 @@ class ConfigPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Configuración'),
         centerTitle: true,
+        backgroundColor: Color(0xFF058FFD),
       ),
       body: ConfigBody(),
     );
@@ -59,15 +60,17 @@ class ConfigBody extends StatelessWidget {
 
 class PersonlaPageRoute extends PageRouteBuilder {
   final Widget child;
-  PersonlaPageRoute(this.child) : super(
-    pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation){
-      return child;
-    },
-    transitionsBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child){
-      return FadeTransition(
-          opacity: animation,
-          child: child,
-        );
-    }
-  );
+  PersonlaPageRoute(this.child)
+      : super(pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondaryAnimation) {
+          return child;
+        }, transitionsBuilder: (BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        });
 }

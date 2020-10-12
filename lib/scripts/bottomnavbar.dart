@@ -38,7 +38,7 @@ class BottomNavBar extends StatelessWidget {
                 size: 30,
                 color: indexBar == 2 ? Color(0xFF0d80eb) : Colors.black),
             onTap: () {
-              Navigator.pushNamed(context, '/routesBuses');
+              Navigator.pushNamed(context, '/pass');
             },
           ),
         ),
@@ -47,7 +47,7 @@ class BottomNavBar extends StatelessWidget {
       buttonBackgroundColor: Colors.white,
       backgroundColor: indexBar == 0 ? Colors.grey[900] : Colors.grey[200],
       animationCurve: Curves.easeInOut,
-      animationDuration: Duration(milliseconds: 600),
+      animationDuration: Duration(milliseconds: 350),
     );
   }
 }

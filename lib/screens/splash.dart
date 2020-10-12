@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:travi_screens/screens/cuerpo.dart';
+import 'package:travi_screens/screens/Comienzo/components/body.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,12 +13,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Cuerpo(),
-            )));
+      Duration(seconds: 5),
+      () => Navigator.of(context).push(_createRoute()),
+    );
   }
 
   @override
@@ -42,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       Container(
                         child: Image.asset("assets/images/Logo.png"),
                         alignment: Alignment.bottomCenter,
-                        height: 100.0,
+                        height: 90.0,
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 10.0),
@@ -78,4 +75,22 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => Body(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(1.0, 0.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }

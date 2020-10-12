@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:travi_screens/screens/Viajes/viajes.dart';
-import 'package:travi_screens/screens/config_page.dart';
-import 'package:travi_screens/screens/cuerpo.dart';
-import 'package:travi_screens/screens/paer_Reg.dart';
-import 'package:travi_screens/screens/paer_login.dart';
+import 'package:travi_screens/screens/Comienzo/components/body.dart';
+import 'package:travi_screens/screens/Login/components/body.dart';
+import 'package:travi_screens/screens/Registro/components/body.dart';
+import 'package:travi_screens/screens/home_mapa/Pass.dart';
+import 'package:travi_screens/screens/home_mapa/home_mapa.dart';
+import 'package:travi_screens/screens/home_mapa/routesBuses.dart';
+import 'package:travi_screens/screens/side_menu/chat.dart';
+import 'package:travi_screens/screens/side_menu/config_page.dart';
+import 'package:travi_screens/screens/side_menu/mis_viajes/viajes.dart';
+import 'package:travi_screens/screens/side_menu/perfil/perfil.dart';
 import 'package:travi_screens/screens/splash.dart';
-import 'package:travi_screens/screens/tuto.dart';
-import 'screens/profile.dart';
-import 'screens/chat.dart';
-//import 'screens/login.dart';
-import 'screens/Home.dart';
-import 'screens/routesBuses.dart';
+import 'package:travi_screens/screens/tutorial_screen/tutorial.dart';
+import 'package:travi_screens/scripts/NewNavBar.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,19 +22,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/splash',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => BottomNavNew(),
         '/viajes': (context) => Viajes(),
-        '/profile': (context) => ProfilePage(),
+        '/profile': (context) => Perfil(),
         '/config': (context) => ConfigPage(),
         '/chat': (context) => ChatPage(),
-        '/start': (context) => Cuerpo(),
-        '/login': (context) => PearReg(),
-        '/registro': (context) => PearLogin(),
+        '/start': (context) => Body(),
+        '/login': (context) => BodyLogin(),
+        '/registro': (context) => BodyRegistro(),
         '/tuto': (context) => Tuto(),
         '/routesBuses': (context) => RoutesAndBuses(),
         '/splash': (context) => SplashScreen(),
+        '/pass': (context) => Pass(),
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,

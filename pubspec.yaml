@@ -29,6 +29,9 @@ dependencies:
   curved_navigation_bar: ^0.3.3
   geolocator: ^5.3.2+2
   sliding_up_panel: ^1.0.2
+  line_awesome_flutter: ^1.0.1
+  flutter_screenutil: ^1.0.2
+  animated_theme_switcher: ^1.0.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +41,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -73,9 +77,20 @@ flutter:
       fonts: 
         - asset: assets/fonts/Righteous-Regular.ttf
 
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+    - family: FredokaOne
+      fonts:
+        - asset: assets/fonts/FredokaOne-Regular.ttf
+
+    - family: SFProText
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Thin.otf
+          weight: 100
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+          weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

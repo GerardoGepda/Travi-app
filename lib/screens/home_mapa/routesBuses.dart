@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../scripts/bottomnavbar.dart';
+import 'package:travi_screens/scripts/bottomnavbar.dart';
 
 class RoutesAndBuses extends StatelessWidget {
   @override
@@ -8,7 +8,6 @@ class RoutesAndBuses extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: MyHeader(),
-        bottomNavigationBar: BottomNavBar(indexBar: 1),
         body: Container(
           child: TabBarView(
             children: <Widget>[

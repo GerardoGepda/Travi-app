@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
-
-import 'data.dart';
+import 'package:travi_screens/screens/tutorial_screen/tutorial_data.dart';
 
 class Tuto extends StatefulWidget {
   @override
@@ -19,7 +17,7 @@ class _HomeState extends State<Tuto> {
       height: isCurrentPage ? 10.0 : 6.0,
       width: isCurrentPage ? 10.0 : 6.0,
       decoration: BoxDecoration(
-        color: isCurrentPage ? Colors.grey : Colors.grey[300],
+        color: isCurrentPage ? Colors.blue : Colors.grey[300],
         borderRadius: BorderRadius.circular(12),
       ),
     );

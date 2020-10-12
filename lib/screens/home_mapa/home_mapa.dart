@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
-import '../scripts/bottomnavbar.dart';
+import 'package:travi_screens/scripts/bottomnavbar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -49,14 +49,14 @@ class _HomePageState extends State<HomePage> {
 
   void currentLocation() {
     _tracker.getLocation().then((value) => {
-      _mapController
-        .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        //bearing: 100,
-        target: LatLng(value.latitude, value.longitude),
-        tilt: 0,
-        zoom: 18,
-      ))),
-    });
+          _mapController
+              .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+            //bearing: 100,
+            target: LatLng(value.latitude, value.longitude),
+            tilt: 0,
+            zoom: 18,
+          ))),
+        });
   }
 
   @override
@@ -67,9 +67,6 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       key: _scaffoldKey,
-      bottomNavigationBar: BottomNavBar(
-        indexBar: 0,
-      ),
 
       //Drawer code
       drawer: Drawer(
@@ -131,20 +128,6 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   Navigator.pushNamed(context, '/profile');
                 },
-              ),
-              ListTile(
-                contentPadding: EdgeInsets.only(left: 30.0, right: 30.0),
-                leading: Icon(
-                  Icons.av_timer,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  "ORGANIZA",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
               ),
               ListTile(
                 contentPadding: EdgeInsets.only(left: 30.0, right: 30.0),
@@ -212,6 +195,9 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 16,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/start');
+                  },
                 ),
               ),
             ],
