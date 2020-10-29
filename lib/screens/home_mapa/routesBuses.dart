@@ -8,6 +8,7 @@ class RoutesAndBuses extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: MyHeader(),
+        bottomNavigationBar: Bottombar(indexBar: 1),
         body: Container(
           child: TabBarView(
             children: <Widget>[
@@ -113,18 +114,14 @@ class BusesTab extends StatelessWidget {
     return Container(
       child: ListView(
         children: <Widget>[
-          _busData(
-              'ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
           _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
           _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
-          _busData(
-              'ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
-          _busData(
-              'ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
+          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
+          _busData('ico_ruta100.jpg', "Ruta 100", "San Salvador - Ciudad Delgado"),
           _busData('ico_ruta113.jpg', "Ruta 119", "San Salvador - El poy"),
           _busData('ico_ruta101.jpg', "Ruta 101", "San Salvador - Santa Tecla"),
-          _busData(
-              'ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
+          _busData('ico_ruta138.jpg', "Ruta 138", "San Salvador - San Luis Talpa"),
         ],
       ),
     );

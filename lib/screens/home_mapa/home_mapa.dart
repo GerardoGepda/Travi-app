@@ -49,14 +49,14 @@ class _HomePageState extends State<HomePage> {
 
   void currentLocation() {
     _tracker.getLocation().then((value) => {
-          _mapController
-              .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-            //bearing: 100,
-            target: LatLng(value.latitude, value.longitude),
-            tilt: 0,
-            zoom: 18,
-          ))),
-        });
+      _mapController
+          .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+        //bearing: 100,
+        target: LatLng(value.latitude, value.longitude),
+        tilt: 0,
+        zoom: 18,
+      ))),
+    });
   }
 
   @override
@@ -67,8 +67,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       key: _scaffoldKey,
-
-      //Drawer code
+      bottomNavigationBar: Bottombar(indexBar: 0),
       drawer: Drawer(
         child: Container(
           decoration: BoxDecoration(

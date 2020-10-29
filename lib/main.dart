@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/splash',
       routes: {
-        '/': (context) => BottomNavNew(),
+        '/': (context) => HomePage(),
         '/viajes': (context) => Viajes(),
         '/profile': (context) => Perfil(),
         '/config': (context) => ConfigPage(),
